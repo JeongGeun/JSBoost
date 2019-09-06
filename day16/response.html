@@ -1,0 +1,352 @@
+HTTP/1.1 200 
+Server: nginx/1.8.0
+Date: Thu, 08 Aug 2019 11:33:57 GMT
+Content-Type: text/html;charset=UTF-8
+Content-Length: 121601
+Connection: keep-alive
+Keep-Alive: timeout=5
+Vary: Accept-Encoding
+X-Application-Context: application:set1:8081
+Cache-Control: no-store
+Set-Cookie: _TUID=73CB7845-EA80-4E83-8F63-1E168F52D67C; Expires=Sun, 05-Aug-2029 11:33:57 GMT; Path=/
+Set-Cookie: _ZUT=nc%3Db5a11680640; Domain=.zum.com; Path=/
+Set-Cookie: czi=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Set-Cookie: bakeryStamp=1; Expires=Sun, 05-Aug-2029 11:33:57 GMT; Path=/
+Set-Cookie: p=0; Path=/
+
+<!DOCTYPE html>
+<html lang="ko" class="">
+<head>
+<title>ZUM - 생각을 읽다, ZUM</title>
+<!-- zum.com의 소스코드가 궁금하면 이곳을 방문하라. http://www.zuminternet.com/recruit/list -->
+<meta charset="utf-8"/>
+<meta http-equiv="cache-control" content="no-cache"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta property="og:title" content="검색포털 줌닷컴"/>
+<meta property="og:description" content="생각을 읽는 검색포털 줌닷컴에서 빠르고 편리한 서비스를 만나보세요!"/>
+<meta property="og:image" content="http://lego.zumst.com/resources/current/images/img_zum.jpg"/>
+<meta name="description" content="생각을 읽는 검색포털 줌닷컴에서 빠르고 편리한 서비스를 만나보세요!"/>
+<link rel="image_src" href="http://lego.zumst.com/resources/current/images/thumb_zum.jpg"/>
+<link rel="icon" href="/favicon.ico?v=2"/>
+<style>
+html {
+background: url(http://lego.zumst.com/resources/current/images/img_main_loading.gif) no-repeat 50% 310px
+}
+body {
+display: none
+}
+</style>
+<link rel="stylesheet" href="http://lego.zumst.com/resources/current/build/css/start-f4bd1e65ae3d1eb164b0fd45dcf36a47.css"/>
+<script type="text/javascript">
+document.domain = 'zum.com';
+history.navigationMode = 'compatible';
+(function () {
+function jsonToKeysArray(jsonObj) {
+var resultArray = [];
+if (jsonObj) {
+for (var name in jsonObj) {
+if (jsonObj.hasOwnProperty(name)) {
+resultArray.push(name);
+}
+}
+}
+return resultArray;
+}
+function jsonToTargetArray(jsonObj) {
+var resultArray = [];
+if (jsonObj) {
+for (var name in jsonObj) {
+if (jsonObj.hasOwnProperty(name)) {
+resultArray.push({
+target : name,
+action : jsonObj[name]
+});
+}
+}
+}
+return resultArray;
+}
+var variants = {};
+var targetValues = "{}";
+var variantsStat = jsonToKeysArray(variants);
+var targetsStat = jsonToTargetArray(targetValues);
+window['serverNumber'] = 24;
+window['variants'] = variants;
+window['targetValues'] = targetValues;
+window['targets'] = "{}";
+window['units'] = {};
+window['variantsStat'] = variantsStat;
+window['targetsStat'] = targetsStat;
+window['variantsParam'] = "";
+window['puid'] = "3c8ed7b4-55f6-46e8-b1df-8fb67538e460";
+})();
+(function () {
+var checkNewsShopping = {
+useShopping:1,
+useNews:1,
+configCookie: function (name, value, options) {
+if (typeof value != 'undefined') {
+options = options || {};
+if (value === null) {
+value = '';
+options.expires = -1;
+}
+var expires = '';
+if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+var date;
+if (typeof options.expires == 'number') {
+date = new Date();
+date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+} else {
+date = options.expires;
+}
+expires = '; expires=' + date.toUTCString();
+}
+var path = options.path ? '; path=' + (options.path) : '';
+var domain = options.domain ? '; domain=' + (options.domain) : '';
+var secure = options.secure ? '; secure' : '';
+document.cookie = [name, '=', encodeURIComponent(value).replace(/\(/g, "%28").replace(/\)/g, "%29"), expires, path, domain, secure].join('');
+} else {
+var cookieValue = null;
+if (document.cookie && document.cookie != '') {
+var cookies = document.cookie.split(';');
+for (var i = 0; i < cookies.length; i++) {
+var cookie = cookies[i].trim();
+if (cookie.substring(0, name.length + 1) == (name + '=')) {
+cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+break;
+}
+}
+}
+return cookieValue;
+}
+},
+moveHome: function () {
+this.configCookie("p", "0", {'expires': 3650});
+var expires = new Date(new Date().getTime() + (5 * 1000));
+this.configCookie("pr", expires.getTime(), {
+'expires': expires,
+'path': '/'
+});
+location.reload();
+},
+init: function () {
+if (window.location.hash.indexOf("news=") > 0) {
+if (this.useNews === 0) {
+this.moveHome();
+}
+}
+else if (window.location.hash.indexOf("shopping") > 0) {
+if (this.useNews === 0 || this.useShopping === 0) {
+this.moveHome();
+}
+}
+}
+};
+checkNewsShopping.init();
+})();
+var ESTatTracker = ESTatTracker || [];
+var zum = {
+postProcessor: [],
+browser:{"version":null,"ie6":false,"ie67":false,"ie8":false,"identifyIe11":false,"mobile":false,"cssClass":"","majorVersion":0,"mozilla":true},
+now: new Date().getTime(),
+initialized: false,
+documentKeyDownHookForSearchBox: true
+};
+window.newslink = false;
+window.newspaperlink = false;
+window.relatednewslink = false;
+(function (m) {
+var cacheProcessor = {};
+var invokedCacheProcessor = false;
+zum.invokeCacheProcessor = function () {
+if (invokedCacheProcessor) {
+return;
+}
+invokedCacheProcessor = true;
+for (var i = 0; i < m.length; ++i) {
+if (cacheProcessor[m[i]]) {
+var params = cacheProcessor[m[i]].shift();
+while (1) {
+if (!params) {
+break;
+}
+window[m[i]].apply(window, params);
+params = cacheProcessor[m[i]].shift();
+}
+}
+}
+};
+for (var i = 0; i < m.length; ++i) {
+window[m[i]] = (function (index) {
+return function () {
+if (invokedCacheProcessor) {
+return;
+}
+if (!cacheProcessor[m[index]]) {
+cacheProcessor[m[index]] = [];
+}
+cacheProcessor[m[index]].push(arguments);
+return false;
+}
+})(i);
+}
+})(['ESTatOnlyClick', 'ESTatDoodleClick', 'viewMobileMode', 'ESTatClick', 'ESTatLinkClick', 'ESTatBannerMoveUrl', 'ESTatLinkAppMoveUrl', 'makeEstat', 'goOutlink']);
+(function () {
+zum.userData = {
+isAuth: "false" === "true",
+authType: "",
+isHomeFirstUser: false,
+isZumpageVisitedUser: true,
+dfset: 1,
+onr : 0,
+st: "1",
+lt: "0",
+hbv: "1",
+hbx: "A50|G17849",
+hpfs: "",
+eng:"",
+se:"0",
+ken:"0",
+thm:"",
+hp:0,
+bxv: null,
+lo: "4",
+bx: "0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0",
+pfs: "",
+lus: "0",
+pri: false,
+lzm: false,
+zpud: null,
+fsd: "",
+ifsc: false
+};
+zum.page = 0;
+zum.mpagecount = 1;
+zum.zumpageId = "";
+zum.myZumpageId = "";
+zum.bakeryStamp = 1;
+zum.readonly = false;
+zum.isTab = false;
+zum.isOwner = true;
+zum.isQa = false;
+zum.baseUrl = "http://zum.com";
+zum.staticBaseUrl = "http://lego.zumst.com/resources/current";
+zum.codeVersion = "6.1.1-20190806-105850";
+zum.profile = "set1";
+zum.homeMigration = false;
+zum.refresh = false;
+zum.layout = {};
+zum.layout[zum.page] = {
+type: "type_3a",
+useShopping:1,
+useNews:1
+};
+zum.settings = {
+refreshTime: '600000',
+maxRefreshSkipCount: '18',
+newsFixMinHeight: 0,
+nfd: '300',
+dlt: '_blank',
+base: {
+"st": "1",
+"lt": "0",
+"eng": "",
+"ken": "0",
+"hbx": "A50|G17849|A17917|G32",
+"hlo": "3a",
+"hlus": "1",
+"p": "0",
+"mxp": "10",
+"mbx": "0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0",
+"lo": "4",
+"bx": "0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0",
+"lus": "1"
+},
+cookies: null,
+rwcc: null ,
+eaa: '1',
+enlf: false,
+hdto:300,
+svto:20000,
+smdt:700,
+usz:true,
+uszsf:true,
+vtd:false,
+vtml:false
+};
+zum.hub = {
+adHubTabs: ["issue2","entertainment2","biz","fun2","life2","food2","trip2","culture2"] //ad 광고
+};
+})();
+var tmpNc = null;
+</script></head>
+<body class=" ">
+<div class="skip_navi"><a href="#zum-container"onclick="document.getElementById('zum-container').tabIndex = -1;document.getElementById('zum-container').focus();return false;">컨텐츠바로가기</a><a href="#zum-newsBox"onclick="document.getElementById('zum-newsBox').tabIndex = -1;document.getElementById('zum-newsBox').focus();return false;">뉴스박스바로가기</a><a href="#zum-shoppingBoxnav_coinzum d_header_stat"onclick="document.getElementById('zum-shoppingBox').tabIndex = -1;document.getElementById('zum-shoppingBox').focus();return false;">쇼핑박스바로가기</a><a href="#zum-hubBox"onclick="document.getElementById('zum-hubBox').tabIndex = -1;document.getElementById('zum-hubBox').focus();return false;">허브바로가기</a></div><div id="zum_event_layer" style="display:none"></div><div class="bg_gnb"></div><div id="wrap"><!-- 전체 페이징 --><div id="zum_paging" class="wrap_paging"><div class="fix_btn prev d_prev" style="display:none;"><a href="javascript:;" onclick="return zum.initialized;" data-pos="front_pageleft"><span class="arrow">이전</span></a></div><div class="fix_btn next d_next" style="display:none;"><a href="javascript:;" onclick="return zum.initialized;" data-pos="front_pageright"><span class="arrow">다음</span></a></div></div><div id="header"><div class="gnb_wrap"><div class="gnb"><div class="gnb_user"><a href="javascript:;" id="login" class="btn_login d_gnb_stat" data-cm="outlink">로그인</a></div></div></div><!-- 검색 --><div class="box_search"><!-- zum 기본로고 --><!-- zum 기본로고 END --><!-- zum 두들 --><div id="adx_zum_main_doodle_default_left"><div class="doodle doodle_left doodle_default_type1"><a class="bg_area d_background" href="http://search.zum.com/search.zum?method=uni&option=accu&rd=1&qm=g_doodle.top&query=%EC%9E%85%EC%B6%94&rc=holiday" target="_blank" data-item-Id="337508"><img src="http://post3.zumst.com/legocms/2019/08/02/09/d658b67a35194d808a64f2e73c31bc98.gif?626"width="222"height="120"border="0" alt="가을의 시작, 입추"></a><a id="d_logo" class="logo_area" href="/page/go" onclick="return zum.initialized;" ></a></div></div><div id="adx_zum_main_doodle_default_right"></div><!-- 캐치프레이즈 전용 두들 --><!-- zum 두들 END --><!-- 검색창 --><form action="http://search.zum.com/search.zum" id="searchForm"><fieldset><a href="/page/go" id="d_mini_logo" class="mini_logo" onclick="return zum.initialized;" data-pos="front_miniheader" data-cm="zum_logo"><span>ZUM</span></a><legend class="blind">검색</legend><div id="searchEngineBox" class="engine"></div><input type="hidden" name="method" value="uni"><input type="hidden" name="option" value="accu"><input type="hidden" name="rd" value=1><input type="hidden" id="searchQueryMethod" name="qm" value="f_typing.top"><div class="bg_box"><input type="text" id="searchText" name="query" value="" size="40" autocomplete="off" style="ime-mode: active;" title="검색어를 입력하세요."></div><div id="searchParams" class="dN"></div><span class="btn_search"><button id="searchSubmit" type="button" title="검색"><span>검색</span></button></span><div class="layer_suggest" id="searchSuggest" style="display:none"></div></fieldset></form><!-- 검색창 END --><div id="guide_query" class="search_q"><strong class="blind">검색어</strong><ul class="hide_y d_guide_query"><li class="fir"><a href="http://search.zum.com/search.zum?method=uni&option=accu&qm=g_guidetxt.top&query=%EC%9C%A1%EA%B5%B0%207%EA%B5%B0%EB%8B%A8%20%EC%9D%B8%EA%B6%8C%20%EC%B9%A8%ED%95%B4" class="d_guide_query_click" >육군 7군단 인권 침해</a></li><li><a href="http://search.zum.com/search.zum?method=uni&option=accu&qm=g_guidetxt.top&query=%EC%B6%A9%EB%B6%81%20%EC%97%AC%EA%B5%90%EC%82%AC%20%EB%AC%B4%ED%98%90%EC%9D%98" class="d_guide_query_click" >충북 여교사 무혐의</a></li><li><a href="http://search.zum.com/search.zum?method=uni&option=accu&qm=g_guidetxt.top&query=BJ%EC%B2%A0%EA%B5%AC%20%EB%8F%84%EB%B0%95%20%EC%9D%98%ED%98%B9" class="d_guide_query_click" >BJ철구 도박 의혹</a></li><li><a href="http://search.zum.com/search.zum?method=uni&option=accu&qm=g_guidetxt.top&query=%EC%9D%B4%EC%A7%84%ED%98%81%20%EC%99%95%EB%94%B0" class="d_guide_query_click" >이진혁 왕따 고백</a></li><li><a href="http://search.zum.com/search.zum?method=uni&option=accu&qm=g_guidetxt.top&query=%EC%B5%9C%ED%95%99%EC%B2%A0%20%EC%82%AC%EB%A7%9D" class="d_guide_query_click" >최학철 사망</a></li></ul><div class="btn_paging d_btn_paging"><a href="javascript:;" class="prev d_prev" data-page="0" data-cm="left" ><span>이전</span></a><a href="javascript:;" class="next d_next" data-page="0" data-cm="right" ><span>다음</span></a></div></div><script>if (!('autofocus' in document.createElement('input'))) {if(!window['searchTargeting']) {document.getElementById('searchText').focus();}}</script></div><!-- 메뉴 바 --><div class="header_nav_bar"><div class="nav_wrap"><div class="nav_zum"><!-- nav_box_on : 서비스 더보기 --><h3 class="blind">줌닷컴 서비스 네비게이션</h3><ul class="nav_menu"><li><a href="http://news.zum.com/" class="nav_newszum d_header_stat" data-cm="outlink"><span>뉴스</span></a></li><li><a href="http://tv.zum.com/" class="nav_tvzum d_header_stat" data-cm="outlink"><span>TV</span></a></li><li><a href="http://hub.zum.com/" class="nav_hubzum d_header_stat" data-cm="outlink"><span>허브</span></a></li><li><a href="http://shopping.zum.com/" class="nav_shoppingzum d_header_stat" data-cm="outlink"><span>쇼핑</span></a></li><li><a href="http://auto.zum.com/" class="nav_auto d_header_stat" data-cm="outlink"><span>자동차</span></a></li><li><a href="http://spoonfeed.hub.zum.com" class="nav_spoonfeed d_header_stat" data-cm="outlink"><span>스포츠영상</span></a></li><li><a href="https://coin.zum.com/" class="nav_coinzum d_header_stat" data-cm="outlink"><span>가상화폐</span></a></li><li><a href="http://issue.zum.com/" class="nav_issue d_header_stat" data-cm="outlink"><span>이슈트렌드</span><b class="icon_highlight"></b></a></li></ul><div class="nav_more"><a href="javascript:;" class="btn_unfold" data-cm="category_open"><span>더보기</span></a><a href="javascript:;" class="btn_fold" data-cm="category_close"><span>더보기</span></a></div><div class="nav_box"><div class="service_list"><div class="list"><h4><a href="http://news.zum.com/" class="d_header_stat" data-cm="news_home">뉴스줌</a></h4><ul><li><a href="http://news.zum.com/front?c=06" class="d_header_stat" data-cm="news_entertainment">연예</a></li><li><a href="http://news.zum.com/front?c=05" class="d_header_stat" data-cm="news_sports">스포츠</a></li><li><a href="http://news.zum.com/front?c=01" class="d_header_stat" data-cm="news_politics">정치</a></li><li><a href="http://news.zum.com/front?c=02" class="d_header_stat" data-cm="news_society">사회</a></li><li><a href="http://news.zum.com/front?c=03" class="d_header_stat" data-cm="news_economy">경제</a></li><li><a href="http://news.zum.com/front?c=04" class="d_header_stat" data-cm="news_international">국제</a></li><li><a href="http://news.zum.com/front?c=08" class="d_header_stat" data-cm="news_it">IT/과학</a></li><li><a href="http://news.zum.com/front?c=07" class="d_header_stat" data-cm="news_culture">문화</a></li><li><a href="http://news.zum.com/front?c=09" class="d_header_stat" data-cm="news_leadingarticle">칼럼</a></li><li><a href="http://news.zum.com/photo" class="d_header_stat" data-cm="news_photo">포토</a><b class="icon_new">new</b></li></ul></div><div class="list"><h4><a href="http://tv.zum.com/" class="d_header_stat" data-cm="tv_home">TV줌</a></h4><ul><li><a href="http://tv.zum.com/ranking" class="d_header_stat" data-cm="tv_ranking">인기랭킹</a></li></ul></div><div class="list"><h4><a href="http://hub.zum.com/" class="d_header_stat" data-cm="hub_home">허브줌</a></h4><ul><li><a href="http://hub.zum.com/life" class="d_header_stat" data-cm="hub_life">라이프</a></li><li><a href="http://hub.zum.com/food" class="d_header_stat" data-cm="hub_food">푸드</a></li><li><a href="http://hub.zum.com/trip" class="d_header_stat" data-cm="hub_trip">여행</a></li><li><a href="http://hub.zum.com/culture" class="d_header_stat" data-cm="hub_culture">컬처</a></li><li><a href="http://hub.zum.com/it" class="d_header_stat" data-cm="hub_it">테크</a></li><li><a href="http://hub.zum.com/biz" class="d_header_stat" data-cm="hub_biz">비즈</a></li><li><a href="http://hub.zum.com/issue" class="d_header_stat" data-cm="hub_issue">이슈</a></li><li><a href="http://hub.zum.com/entertainment" class="d_header_stat" data-cm="hub_entertainment">연예</a></li></ul></div><div class="list"><h4><a href="http://shopping.zum.com/" class="d_header_stat" data-cm="shopping_home">쇼핑줌</a></h4><ul><li><a href="http://shopping.zum.com/best" class="d_header_stat" data-cm="shopping_bestmall">베스트몰</a></li><li><a href="http://shopping.zum.com/popular" class="d_header_stat" data-cm="shopping_hotitem">인기상품</a></li><li><a href="http://shopping.zum.com/premium" class="d_header_stat" data-cm="shopping_showroom">프리미엄쇼룸</a></li><li><a href="http://shopping.zum.com/trend" class="d_header_stat" data-cm="shopping_trend">쇼핑트렌드</a></li></ul></div><div class="list"><h4><a href="http://auto.zum.com/" class="d_header_stat" data-cm="auto_home">자동차줌</a></h4><ul><li><a href="http://auto.zum.com/news.jsp" class="d_header_stat" data-cm="auto_news">최신뉴스</a></li><li><a href="http://auto.zum.com/review.jsp" class="d_header_stat" data-cm="auto_review">시승기/리뷰</a></li><li><a href="http://auto.zum.com/guide.jsp" class="d_header_stat" data-cm="auto_guide">구매가이드</a></li></ul></div><div class="list"><h4><a href="http://spoonfeed.hub.zum.com/" class="d_header_stat" data-cm="spoonfeed_home">스푼피드</a></h4><ul><li><a href="http://spoonfeed.hub.zum.com/?mod=news&act=articleList&view_type=T&sc_code=1490930500" class="d_header_stat" data-cm="spoonfeed_sportstime">스포츠타임</a></li><li><a href="http://spoonfeed.hub.zum.com/?mod=news&act=articleList&view_type=T&sc_code=1489369693,1489369796,1489369870,1489369889,1489370015,1489370048,1489370067,1489370081,1489370112" class="d_header_stat" data-cm="spoonfeed_sports">스포츠</a></li><li><a href="http://spoonfeed.hub.zum.com/?mod=news&act=articleList&view_type=T&sc_code=1489370177" class="d_header_stat" data-cm="spoonfeed_entertainment">연예</a></li><li><a href="http://spoonfeed.hub.zum.com/?mod=news&act=articleList&view_type=T&sc_code=1489383606" class="d_header_stat" data-cm="spoonfeed_beauty">뷰티/패션</a></li><li><a href="http://spoonfeed.hub.zum.com/?mod=news&act=articleList&view_type=T&sc_code=1491362374" class="d_header_stat" data-cm="spoonfeed_life">라이프</a></li></ul></div><div class="list"><h4><a href="https://coin.zum.com/" class="d_header_stat" data-cm="coin_home">코인줌</a></h4><ul><li><a href="https://coin.zum.com/news" class="d_header_stat" data-cm="coin_news">뉴스</a></li><li><a href="https://coin.zum.com/realtime" class="d_header_stat" data-cm="coin_realtime">실시간반응</a></li><li><a href="https://coin.zum.com/price" class="d_header_stat" data-cm="coin_price">시세정보</a></li><li><a href="https://coin.zum.com/channel" class="d_header_stat" data-cm="coin_channel">추천채널</a></li></ul></div><div class="list"><h4><a href="http://issue.zum.com/" class="d_header_stat" data-cm="issue_home">이슈트렌드</a><b class="icon_new">new</b></h4><ul><li><a href="http://issue.zum.com/daily" class="d_header_stat" data-cm="issue_daily">일간</a></li></ul></div><div class="list"><h4><a href="http://www.egloos.com/" class="d_header_stat" data-cm="blog_egloos">이글루스</a></h4></div></div><div class="mobile_list"><div class="list"><h4>모바일 앱</h4><ul><li><a href="http://search.zum.com/search.zum?method=uni&option=accu&qm=g_gnb.top&query=%EC%A4%8C%EC%95%B1" target="_blank" class="d_header_stat" data-cm="zum_app"><b class="icon icon_zum_app"></b>ZUM</a></li><li><a href="http://newsum.zum.com/?utm_source=zummain&utm_medium=lnb&utm_campaign=newsum" target="_blank" class="d_header_stat" data-cm="newsum_app"><b class="icon icon_newsum_app"></b>뉴썸</a></li><li><a href="http://search.zum.com/search.zum?method=uni&option=accu&qm=g_gnb.top&rd=1&query=%EC%9D%B4%EA%B8%80%EB%A3%A8%EC%8A%A4+%EB%AA%A8%EB%B0%94%EC%9D%BC%EC%95%B1" target="_blank" class="d_header_stat" data-cm="egloos_app"><b class="icon icon_egloos_app"></b>이글루스</a></li><li><a href="http://www.zuminternet.com/inside_zum/26?utm_source=zummain&utm_medium=lnb" target="_blank" class="d_header_stat" data-cm="realreview_app"><b class="icon icon_realreview_app"></b>리얼리뷰</a></li><li><a href="http://lalla.zum.com" target="_blank" class="d_header_stat" data-cm="lalla_app"><b class="icon icon_lalla_app"></b>랄라</a><b class="icon_new">new</b></li></ul></div></div></div></div><div class="nav_favorite_sites d_box_favorite_sites"><!-- 자주가는 사이트 --><script type="text/javascript">window['myFavoriteSiteJson'] = [{"id":107958,"target":"_blank","title":"네이버","image":"http://post3.zumst.com/legocms/2016/07/06/11/9bc63a8a14ad4ae39eb181fe002f3bcf.png","image2":"http://post3.zumst.com/legocms/2017/10/31/20/76336c2d152e405286f041e05a64b738.png","previewImage":null,"url":"http://www.naver.com/","defaultRank":1,"fixed":false,"configCategorySlotKey":"favorite_site_3_portal_view","configCategorySlotTitle":"포털","configCategorySlotId":171,"configCategorySlotRank":1,"configItemRank":1,"preview":false},{"id":107961,"target":"_blank","title":"다음","image":"http://post3.zumst.com/legocms/2016/07/06/11/543ff736d81244a687e308fb6e5f8929.png","image2":"http://post3.zumst.com/legocms/2017/10/31/20/3633d860609f48eaad9c5b519ff6ffdb.png","previewImage":null,"url":"https://www.daum.net/","defaultRank":2,"fixed":false,"configCategorySlotKey":"favorite_site_3_portal_view","configCategorySlotTitle":"포털","configCategorySlotId":171,"configCategorySlotRank":1,"configItemRank":7,"preview":false},{"id":107982,"target":"_blank","title":"유튜브","image":"http://post3.zumst.com/legocms/2016/07/06/13/0979f3c561b348dc9e6fd3a8c47d3862.png","image2":"http://post3.zumst.com/legocms/2017/10/31/20/9e853a7623d94fb1ac59a3a6af9520e0.png","previewImage":null,"url":"http://www.youtube.com/","defaultRank":3,"fixed":false,"configCategorySlotKey":"favorite_site_3_video_view","configCategorySlotTitle":"동영상·엔터","configCategorySlotId":173,"configCategorySlotRank":3,"configItemRank":1,"preview":false},{"id":107964,"target":"_blank","title":"구글","image":"http://post3.zumst.com/legocms/2017/10/30/16/ea09ff81358d4a9e8b7ced3d7fbd89e4.png","image2":"http://post3.zumst.com/legocms/2017/10/31/20/2f7110f0c2e44d1a9eac87e062f29aa5.png","previewImage":null,"url":"https://www.google.co.kr/","defaultRank":4,"fixed":false,"configCategorySlotKey":"favorite_site_3_portal_view","configCategorySlotTitle":"포털","configCategorySlotId":171,"configCategorySlotRank":1,"configItemRank":13,"preview":false},{"id":107952,"target":"_blank","title":"지도","image":"http://post3.zumst.com/legocms/2016/07/06/11/fde01722008346258b5e889ccb9b4439.png","image2":"http://post3.zumst.com/legocms/2017/10/31/20/22465c031ade4f02b09fee87804a84ee.png","previewImage":null,"url":"http://search.zum.com/search.zum?method=uni&option=accu&qm=g_favorite.top&query=%EB%B0%94%EB%A1%9C%EC%B0%BE%EA%B8%B0%20%EC%A7%80%EB%8F%84%20%EC%82%AC%EC%9D%B4%ED%8A%B8","defaultRank":5,"fixed":false,"configCategorySlotKey":"favorite_site_3_favoritesite_view","configCategorySlotTitle":"즐겨찾기","configCategorySlotId":174,"configCategorySlotRank":4,"configItemRank":7,"preview":true},{"id":107946,"target":"_blank","title":"은행","image":"http://post3.zumst.com/legocms/2016/07/06/11/36b0925e6fad427a8625b7dba04064bf.png","image2":"http://post3.zumst.com/legocms/2017/10/31/20/d4a548c6fb284ace92973d1079872374.png","previewImage":null,"url":"http://search.zum.com/search.zum?method=uni&option=accu&qm=g_favorite.top&query=%EB%B0%94%EB%A1%9C%EC%B0%BE%EA%B8%B0%20%EC%9D%80%ED%96%89%20%EC%82%AC%EC%9D%B4%ED%8A%B8","defaultRank":6,"fixed":false,"configCategorySlotKey":"favorite_site_3_favoritesite_view","configCategorySlotTitle":"즐겨찾기","configCategorySlotId":174,"configCategorySlotRank":4,"configItemRank":1,"preview":true}];</script><h3><span class="blind">자주가는 사이트</span></h3><div class="site_list"><ul class="d_site_list"><li class="d_pos"><a href="http://www.naver.com/" class="d_item" target="_blank" data-idx="107958" data-disabled="false" data-order="1" data-input="false"><img src="http://post3.zumst.com/legocms/2017/10/31/20/76336c2d152e405286f041e05a64b738.png" class="" alt="네이버" onerror='this.onerror=null;this.src="http://lego.zumst.com/resources/current/images/f_s_default_logo_20171030.png";'><span class="title">네이버</span></a></li><li class="d_pos"><a href="https://www.daum.net/" class="d_item" target="_blank" data-idx="107961" data-disabled="false" data-order="2" data-input="false"><img src="http://post3.zumst.com/legocms/2017/10/31/20/3633d860609f48eaad9c5b519ff6ffdb.png" class="" alt="다음" onerror='this.onerror=null;this.src="http://lego.zumst.com/resources/current/images/f_s_default_logo_20171030.png";'><span class="title">다음</span></a></li><li class="d_pos"><a href="http://www.youtube.com/" class="d_item" target="_blank" data-idx="107982" data-disabled="false" data-order="3" data-input="false"><img src="http://post3.zumst.com/legocms/2017/10/31/20/9e853a7623d94fb1ac59a3a6af9520e0.png" class="" alt="유튜브" onerror='this.onerror=null;this.src="http://lego.zumst.com/resources/current/images/f_s_default_logo_20171030.png";'><span class="title">유튜브</span></a></li><li class="d_pos"><a href="https://www.google.co.kr/" class="d_item" target="_blank" data-idx="107964" data-disabled="false" data-order="4" data-input="false"><img src="http://post3.zumst.com/legocms/2017/10/31/20/2f7110f0c2e44d1a9eac87e062f29aa5.png" class="" alt="구글" onerror='this.onerror=null;this.src="http://lego.zumst.com/resources/current/images/f_s_default_logo_20171030.png";'><span class="title">구글</span></a></li><li class="d_pos"><a href="http://search.zum.com/search.zum?method=uni&option=accu&qm=g_favorite.top&query=%EB%B0%94%EB%A1%9C%EC%B0%BE%EA%B8%B0%20%EC%A7%80%EB%8F%84%20%EC%82%AC%EC%9D%B4%ED%8A%B8" class="d_item" target="_blank" data-idx="107952" data-disabled="false" data-order="5" data-input="false"><img src="http://post3.zumst.com/legocms/2017/10/31/20/22465c031ade4f02b09fee87804a84ee.png" class="" alt="지도" onerror='this.onerror=null;this.src="http://lego.zumst.com/resources/current/images/f_s_default_logo_20171030.png";'><span class="title">지도</span></a></li><li class="d_pos"><a href="http://search.zum.com/search.zum?method=uni&option=accu&qm=g_favorite.top&query=%EB%B0%94%EB%A1%9C%EC%B0%BE%EA%B8%B0%20%EC%9D%80%ED%96%89%20%EC%82%AC%EC%9D%B4%ED%8A%B8" class="d_item" target="_blank" data-idx="107946" data-disabled="false" data-order="6" data-input="false"><img src="http://post3.zumst.com/legocms/2017/10/31/20/d4a548c6fb284ace92973d1079872374.png" class="" alt="은행" onerror='this.onerror=null;this.src="http://lego.zumst.com/resources/current/images/f_s_default_logo_20171030.png";'><span class="title">은행</span></a></li><li><a href="http://adr.zum.com/click?method=SHOPPING_OPEN_SITE&key=SOS797&hc=734457822" target="_blank" class="d_shopping_item d_item" data-order="7" data-id="SOS797"><img src="http://lego.zumst.com/resources/current/images/favorite_sites_ad_slot/icon_emart_20190124.png" alt="이마트몰"><span class="title">이마트몰</span></a></li></ul></div><a href="#setup" class="btn_setup" title="사이트 목록 설정" id="d_btn_open_favorite_site"><span>설정</span></a></div></div></div><!-- // 메뉴 바 --><div id="adx_zum_whole_doodle"></div> </div>
+<!-- 헤더용 딤드 레이어 마스크 -->
+<div class="header_mask_under" style="display:none"></div>
+<div id="container">
+<h2 class="skip_anchor" id="zum-container">줌닷컴 시작페이지 컨텐츠</h2>
+<div id="container_placeholder" style="display:none"></div>
+<div id="wrap_ad_minisite" style="position:absolute;top:0;left:0;z-index:140"></div>
+<div id="wrap_container" class="container_wrap d_container_wrap" data-object="container" >
+<div id="adx_zum_main_leftwing" class="box_wing_banner"></div>
+<div id="banner_lefttop" class="box_top_main_banner">
+</div>
+<div class="box_shopping_favorite d_box_shopping_favorite">
+<style>
+.box_shopping_favorite li a span {
+background-image: url("http://post3.zumst.com/legocms/2019/08/01/09/86ef8d0a23d54a52b6d74655af8ddb3d.png") !important;
+}
+</style>
+<h3 class="blind"><span>쇼핑 즐겨찾기</span></h3>
+<ul>
+<li class="pos_1">
+<a data-order="1" href="http://adr.zum.com/click?method=SHOPPING_FAVORITE_SITE&key=SFS200&hc=244892401"
+title="지마켓" target="_blank" class="d_shopping_favorite_logo">
+<span class="logo_1">지마켓</span>
+</a>
+</li>
+<li class="pos_2">
+<a data-order="2" href="http://adr.zum.com/click?method=SHOPPING_FAVORITE_SITE&key=SFS201&hc=1699587034"
+title="옥션" target="_blank" class="d_shopping_favorite_logo">
+<span class="logo_2">옥션</span>
+</a>
+</li>
+<li class="pos_3">
+<a data-order="3" href="http://adr.zum.com/click?method=SHOPPING_FAVORITE_SITE&key=SFS202&hc=1951512102"
+title="하프클럽" target="_blank" class="d_shopping_favorite_logo">
+<span class="logo_3">하프클럽</span>
+</a>
+</li>
+<li class="pos_4">
+<a data-order="4" href="http://adr.zum.com/click?method=SHOPPING_FAVORITE_SITE&key=SFS203&hc=1639938461"
+title="11번가 11주년 생일 맞이,&#10;스페셜한 할인쿠폰 제공, OK캐쉬백 적립까지!" target="_blank" class="d_shopping_favorite_logo">
+<span class="logo_4">11번가</span>
+</a>
+</li>
+<li class="pos_5">
+<a data-order="5" href="http://adr.zum.com/click?method=SHOPPING_FAVORITE_SITE&key=SFS1096&hc=343615264"
+title="위메프" target="_blank" class="d_shopping_favorite_logo">
+<span class="logo_5">위메프</span>
+</a>
+</li>
+<li class="pos_6">
+<a data-order="6" href="http://adr.zum.com/click?method=SHOPPING_FAVORITE_SITE&key=SFS205&hc=843450166"
+title="쿠팡" target="_blank" class="d_shopping_favorite_logo">
+<span class="logo_6">쿠팡</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="wrap_box">
+<div class="wrap_fixed">
+<!-- 뉴스박스 -->
+<div class="news_box" id="zum-newsBox">
+<div class="news_list d_news_list">
+<div class="menu d_menu" data-seq="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"><h3 data-sectioncode="302" data-tabname="home" class="total_1 news_total d_mouseout " data-url="http://news.zum.com/" ><a href="javascript:;" class="tab_1"><span>종합</span></a><div style="display:none;" class="door_data"><span data-page="0" data-section="302" data-url="http://news.zum.com/zum/view?id=0032019080854271300&v=2" data-type="first" data-category="사회">매우 강한 태풍 '레끼마' 북상…<br>한미일 기상청, 산둥반도행 예상</span><span data-page="0" data-section="302" data-url="http://news.zum.com/zum/view?id=0512019080854273817&v=2" data-type="last" data-category="사회">경찰, 공무집행방해 사건 강화…사건현장 출입지침도 보완</span></div></h3><h3 data-sectioncode="302" data-tabname="home" class="total_2 d_mouseout " data-url="http://news.zum.com/" ><a href="javascript:;" class="tab_1"><span>종합</span></a><div style="display:none;" class="door_data"><span data-page="1" data-section="302" data-url="http://news.zum.com/zum/view?id=0362019080854255693&v=2" data-type="first" data-category="국제">함께 외출하지 않겠습니까…<br>日서 작은 소녀상 확산 캠페인</span><span data-page="1" data-section="302" data-url="http://news.zum.com/zum/view?id=1072019080854273992&v=2" data-type="last" data-category="스포츠">벨기에 1부 구단, 이승우에게 영입 제의</span></div></h3><h3 data-sectioncode="302" data-tabname="home" class="total_3 d_mouseout " data-url="http://news.zum.com/" ><a href="javascript:;" class="tab_1"><span>종합</span></a><div style="display:none;" class="door_data"><span data-page="2" data-section="302" data-url="http://news.zum.com/zum/view?id=0012019080854273869&v=2" data-type="first" data-category="문화">폭삭 무너진 국가민속문화재…<br>감리·대리인도 없이 공사하다가</span><span data-page="2" data-section="302" data-url="http://news.zum.com/zum/view?id=0032019080854262038&v=2" data-type="last" data-category="연예">부산바다 넘을 웃음폭탄…부산국제코미디페스티벌</span></div></h3><div class="list" ><ul class="thumb_news thumb_2"><li><a href="http://news.zum.com/zum/view?id=0032019080854271300&v=2&tab=home&p=0&r=1&cm=nb_article_view&thumb=1" data-category="사회" title="매우 강한 태풍 &#39;레끼마&#39; 북상… 한미일 기상청, 산둥반도행 예상" onclick="return false;" class="item d_newslink"><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/20/ef84cc47f90c4911a2d53d237ae66563.png" width="172" height="93" alt=""><span class="bd"></span><span class="mask"></span><span class="icon_news icon_video" data-label="video">video</span></div><span class="text">매우 강한 태풍 &#39;레끼마&#39; 북상…<br>한미일 기상청, 산둥반도행 예상</span></a></li><li><a href="http://news.zum.com/zum/view?id=0112019080854260013&v=2&tab=home&p=0&r=2&cm=nb_article_view&thumb=1" data-category="정치" title="&#39;시호크&#39;·&#39;와일드캣&#39;·&#39;시라이언&#39; 해상작전헬기 3파전" onclick="return false;" class="item d_newslink"><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/19/97b1fcc54eb44f51a661df6e68c58775.png" width="172" height="93" alt=""><span class="bd"></span><span class="mask"></span></div><span class="text">&#39;시호크&#39;·&#39;와일드캣&#39;·&#39;시라이언&#39; <br>해상작전헬기 3파전</span></a></li></ul><ul class="text_news"><li class=""><a href="http://news.zum.com/zum/view?id=0512019080854272946&v=2&tab=home&p=0&r=3&cm=nb_article_view&thumb=0" data-category="정치" title="문재인 대통령, 9일 개각 단행…과기부 장관 포함될 듯" onclick="return false;" class="item d_newslink"><strong><span class="text">문재인 대통령, 9일 개각 단행…과기부 장관 포함될 듯</span></strong></a></li><li class=""><a href="http://news.zum.com/zum/view?id=0352019080854272837&v=2&tab=home&p=0&r=4&cm=nb_article_view&thumb=0" data-category="정치" title="에스퍼가 들고 오는 미국 청구서, 한국 어디까지 &quot;예스&quot; 할까" onclick="return false;" class="item d_newslink"><span class="text">에스퍼가 들고 오는 미국 청구서, 한국 어디까지 &quot;예스&quot; 할까</span></a></li><li class=""><a href="http://news.zum.com/zum/view?id=0042019080854271156&v=2&tab=home&p=0&r=5&cm=nb_article_view&thumb=0" data-category="국제" title="아베, 8·15 야스쿠니 참배 가능성…일본 관방장관, 부정 안 해" onclick="return false;" class="item d_newslink"><span class="text">아베, 8·15 야스쿠니 참배 가능성…일본 관방장관, 부정 안 해</span></a></li><li class=""><a href="http://news.zum.com/zum/view?id=0032019080854274162&v=2&tab=home&p=0&r=6&cm=nb_article_view&thumb=0" data-category="국제" title="미국, 정부기관 화웨이 등 중국 장비 구매금지…中 &quot;단호 반대&quot;" onclick="return false;" class="item d_newslink"><span class="text">미국, 정부기관 화웨이 등 중국 장비 구매금지…中 &quot;단호 반대&quot;</span></a></li><li class=""><a href="http://news.zum.com/zum/view?id=0722019080854274070&v=2&tab=home&p=0&r=7&cm=nb_article_view&thumb=0" data-category="경제" title="정부 &quot;제비 한 마리에 봄 온 것 아니다&quot;…일본 노림수 경계" onclick="return false;" class="item d_newslink"><strong><span class="text">정부 &quot;제비 한 마리에 봄 온 것 아니다&quot;…일본 노림수 경계</span></strong></a></li><li class=""><a href="http://news.zum.com/zum/view?id=0112019080854273225&v=2&tab=home&p=0&r=8&cm=nb_article_view&thumb=0" data-category="사회" title="KT 전 임원 &quot;김성태 딸 채용, 이석채 주 관심사…원칙상 불합격&quot;" onclick="return false;" class="item d_newslink"><span class="text">KT 전 임원 &quot;김성태 딸 채용, 이석채 주 관심사…원칙상 불합격&quot;</span></a></li><li class=""><a href="http://news.zum.com/zum/view?id=0512019080854273817&v=2&tab=home&p=0&r=9&cm=nb_article_view&thumb=0" data-category="사회" title="경찰, 공무집행방해 사건 강화…사건현장 출입지침도 보완" onclick="return false;" class="item d_newslink"><span class="text">경찰, 공무집행방해 사건 강화…사건현장 출입지침도 보완</span></a></li><li class=""><a href="http://news.zum.com/issuelist/53456829" title="[이슈] 일본, 한국 수출규제 확대" data-category="스포츠" data-cm="nb_article_view" class="item d_newsOutlink" target="_blank"><span class="text">[이슈] 일본, 한국 수출규제 확대</span><span class="icon_news icon_outlink" title="외부링크">OUTLINK</span></a></li></ul><a href="http://news.zum.com/?cm=nb_home" class="section_home d_section_home"><span>뉴스홈</span></a></div><h3 data-sectioncode="308" data-tabname="entertain" class=" d_mouseout " data-url="http://news.zum.com/front?c=06" ><a href="javascript:;" class="tab_2"><span>연예</span></a><div style="display:none;" class="door_data"><span data-page="3" data-section="308" data-url="http://news.zum.com/zum/view?id=0042019080854268335&v=2" data-type="first" data-category="연예">"산촌편, 뭔가 달라"…나PD가 <br>밝힌 '삼시세끼'의 모든 것</span><span data-page="3" data-section="308" data-url="http://news.zum.com/zum/view?id=0532019080854270695&v=2" data-type="last" data-category="연예">한일갈등 속 애꿎은 日 출신 K팝 가수들 '진땀'</span></div></h3><h3 data-sectioncode="307" data-tabname="sports" class=" d_mouseout " data-url="http://news.zum.com/front?c=05" ><a href="javascript:;" class="tab_3"><span>스포츠</span></a><div style="display:none;" class="door_data"><span data-page="4" data-section="307" data-url="http://news.zum.com/zum/view?id=0022019080854271490&v=2" data-type="first" data-category="스포츠">'호날두 노쇼 사태' 주최사 <br>더페스타 "국민에게 사과"</span><span data-page="4" data-section="307" data-url="http://news.zum.com/zum/view?id=0962019080854273503&v=2" data-type="last" data-category="스포츠">이승우, 벨기에 1부 신트트라위던서 러브콜</span></div></h3><h3 data-sectioncode="311" data-tabname="politics" class=" d_mouseout " data-url="http://news.zum.com/front?c=01" ><a href="javascript:;" class="tab_4"><span>정치</span></a><div style="display:none;" class="door_data"><span data-page="5" data-section="311" data-url="http://news.zum.com/zum/view?id=0032019080854261040&v=2" data-type="first" data-category="정치">바른미래, '보수통합' 이어 <br>'호남 제3지대설'로 흔들</span><span data-page="5" data-section="311" data-url="http://news.zum.com/zum/view?id=0112019080854270796&v=2" data-type="last" data-category="정치">"일본과 싸우려면?"…흔들리는 '주 52시간 근로제'</span></div></h3><h3 data-sectioncode="303" data-tabname="society" class=" d_mouseout " data-url="http://news.zum.com/front?c=02" ><a href="javascript:;" class="tab_5"><span>사회</span></a><div style="display:none;" class="door_data"><span data-page="6" data-section="303" data-url="http://news.zum.com/zum/view?id=0532019080854269454&v=2" data-type="first" data-category="사회">日서 확산되는 '좋아요 한국', <br>목표는 'No 아베'</span><span data-page="6" data-section="303" data-url="http://news.zum.com/zum/view?id=0512019080854270699&v=2" data-type="last" data-category="사회">'성접대 의혹' 양현석 해외 원정도박 정황도</span></div></h3><h3 data-sectioncode="304" data-tabname="economy" class=" d_mouseout " data-url="http://news.zum.com/front?c=03" ><a href="javascript:;" class="tab_6"><span>경제</span></a><div style="display:none;" class="door_data"><span data-page="7" data-section="304" data-url="http://news.zum.com/zum/view?id=0762019080854267786&v=2" data-type="first" data-category="IT·과학">사진으로 보는 삼성 갤럭시 <br>노트 10의 5가지 주요 특징</span><span data-page="7" data-section="304" data-url="http://news.zum.com/zum/view?id=0512019080854270181&v=2" data-type="last" data-category="경제">'노 재팬'…韓국민, 日서 신용카드 사용액 급감</span></div></h3><h3 data-sectioncode="306" data-tabname="world" class=" d_mouseout " data-url="http://news.zum.com/front?c=04" ><a href="javascript:;" class="tab_7"><span>국제</span></a><div style="display:none;" class="door_data"><span data-page="8" data-section="306" data-url="http://news.zum.com/zum/view?id=0362019080854273289&v=2" data-type="first" data-category="국제">사우디에 '스마트 폭탄' 기술 <br>이전하려는 트럼프 행정부</span><span data-page="8" data-section="306" data-url="http://news.zum.com/zum/view?id=0012019080854268970&v=2" data-type="last" data-category="국제">일본 시민들 '작은 소녀상' 운동 확산 나섰다</span></div></h3><h3 data-sectioncode="99" data-tabname="rank" class=" d_mouseout last" data-url="http://news.zum.com/" ><a href="javascript:;" class="tab_8"><span>랭킹</span></a><div style="display:none;" class="door_data"><span data-page="9" data-section="99" data-url="http://news.zum.com/zum/view?id=0092019080854273867&v=2" data-type="first" data-category="사회">도청서 9급 공무원 면접시험 중 심장 멈췄던 女수험생 의식 돌아와</span><span data-page="9" data-section="99" data-url="http://news.zum.com/zum/view?id=0512019080854273979&v=2" data-type="last" data-category="국제">러, 핵잠함 기지 폭발로 9명 사상…"장비시험 중 사고"</span></div></h3></div><div class="btn_paging"><a href="javascript:;" title="이전" class="prev d_prev"><span>이전</span></a><a href="javascript:;" title="다음" class="next d_next"><span>다음</span></a></div><div class="btn_paging footer"><a href="javascript:;" title="이전" class="prev d_prev"><span>이전</span></a><a href="javascript:;" title="다음" class="next d_next"><span>다음</span></a></div>
+</div>
+</div>
+<!-- //뉴스 박스 -->
+<div class="hot_topic_box d_box_photo_news">
+<h3><span>핫이슈</span></h3><div class="item_list"><ul class="d_photolist" data-total="6" data-page="0" style="display: block"><li><a href="https://tv.zum.com/play/1308003?cm=pn_article_view&r=1&thumb=1" class="item d_photonewslink" data-id="50614133" data-index="1" data-kn="-1" data-ol="I" ><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/08/bc17bff72b7345e4a0298c51b6b8652d.jpg" alt="" width="136" height="100"><span class="bd"></span><span class="icon_topic icon_video">TV방송</span></div><span class="text">백종원 눈물 보고나서야<br>참회한 이대백반집</span></a></li><li><a href="https://tv.zum.com/play/1307617?cm=pn_article_view&r=2&thumb=1" class="item d_photonewslink" data-id="48750431" data-index="2" data-kn="-1" data-ol="I" ><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/08/c1c50c673a2a4d2e86518ed68c70eea0.jpg" alt="" width="136" height="100"><span class="bd"></span><span class="icon_topic icon_video">TV방송</span></div><span class="text">루나도 마시고 12kg 뺐다는<br>'아이돌 물'의 정체</span></a></li><li><a href="https://tv.zum.com/play/929184?cm=pn_article_view&r=3&thumb=1" class="item d_photonewslink" data-id="47364695" data-index="3" data-kn="-1" data-ol="I" ><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/06/14/b86e2d2affb84c9baeef90d19c0da500.jpg" alt="" width="136" height="100"><span class="bd"></span><span class="icon_topic icon_video">TV방송</span></div><span class="text">안중근의 이토 히로부미<br>저격 직후가 담긴 영상</span></a></li><li><a href="https://tv.zum.com/play/1307775?cm=pn_article_view&r=4&thumb=1" class="item d_photonewslink" data-id="50626716" data-index="4" data-kn="-1" data-ol="I" ><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/08/0677dd9fae5f4ac3a78306f489f5d33f.jpg" alt="" width="136" height="100"><span class="bd"></span><span class="icon_topic icon_video">TV방송</span></div><span class="text">아기가 잠든 후에…<br>신혼부부의 은밀한 사생활</span></a></li></ul><ul class="d_photolist" data-total="6" data-page="1" style="display: none"><li><a href="https://tv.zum.com/play/1307990?cm=pn_article_view&r=1&thumb=1" class="item d_photonewslink" data-id="50901238" data-index="1" data-kn="-1" data-ol="I" ><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/08/24002f5fdb1a4fc59eb68a0cc5eb3974.jpg" alt="" width="136" height="100"><span class="bd"></span><span class="icon_topic icon_video">TV방송</span></div><span class="text">"거짓으로 내 이름 팔지 마!"<br>백종원, 후지산 대폭발 분노</span></a></li><li><a href="https://tv.zum.com/play/1307922?cm=pn_article_view&r=2&thumb=1" class="item d_photonewslink" data-id="47364517" data-index="2" data-kn="-1" data-ol="I" ><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/08/0e5cdc22270a4c31890c21a18fdbd67b.jpg" alt="" width="136" height="100"><span class="bd"></span><span class="icon_topic icon_video">TV방송</span></div><span class="text">자연인 침대 밑에서 <br>윤택이 발견한 것의 정체</span></a></li><li><a href="https://tv.zum.com/play/929376?cm=pn_article_view&r=3&thumb=1" class="item d_photonewslink" data-id="48750523" data-index="3" data-kn="-1" data-ol="I" ><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/06/14/f762967484834c0e90c81b1337ed2a0c.jpg" alt="" width="136" height="100"><span class="bd"></span><span class="icon_topic icon_video">TV방송</span></div><span class="text">김종국 VS 쇼리 팔씨름<br>충격적인 반전의 결과?!</span></a></li><li><a href="http://search.zum.com/search.zum?query=%EC%88%98%EB%AF%B8%EB%84%A4%EB%B0%98%EC%B0%AC%20%EC%86%A1%EA%B0%80%EC%9D%B8&qm=g_pn.top&method=uni&option=accu&cm=pn_article_view&r=4&thumb=1" class="item d_photonewslink" data-id="48750457" data-index="4" data-kn="-1" data-ol="I" ><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/08/5fad890a23384eb5b60f2d542eca5e50.JPG" alt="" width="136" height="100"><span class="bd"></span><span class="icon_topic icon_video">TV방송</span></div><span class="text">송가인, 장동민과 러브라인?<br>딱 '한 마디'로 종결</span></a></li></ul><ul class="d_photolist" data-total="6" data-page="2" style="display: none"><li><a href="http://news.zum.com/photo/32087868/54271769?cm=pn_article_view&r=1&thumb=1" class="item d_photonewslink" data-id="54271769" data-index="1" data-kn="2" data-ol="I" target="_blank"><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/19/fb2e6d01d3154484b5ccb29272d9c365.jpg" alt="" width="136" height="100"><span class="bd"></span><span class="icon_topic icon_photo">포토뉴스</span></div><span class="text">백종원 눈물 흘린 '골목식당' <br>시청한 소유진 심경</span></a></li><li><a href="http://news.zum.com/photo/32087868/54264228?cm=pn_article_view&r=2&thumb=1" class="item d_photonewslink" data-id="54264228" data-index="2" data-kn="2" data-ol="I" target="_blank"><div class="thumb"><img src="http://static.news.zumst.com/images/upload/2019/08/08/16/
